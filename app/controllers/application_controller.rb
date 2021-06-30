@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  include Pagy::Backend
+
   def current_user
     return @current_user if @current_user.present?
 

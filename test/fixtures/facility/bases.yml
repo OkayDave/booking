@@ -1,0 +1,48 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+
+tennis1:
+  id: 1
+  name: Tennis Court One
+  type: Facility::Tennis
+  updated_at: <%= Time.zone.now %>
+  created_at: <%= Time.zone.now %>
+
+tennis2:
+  id: 2
+  name: Tennis Court Two
+  type: Facility::Tennis
+  updated_at: <%= Time.zone.now %>
+  created_at: <%= Time.zone.now %>
+
+football1:
+  id: 3
+  name: Football One
+  type: Facility::Football
+  updated_at: <%= Time.zone.now %>
+  created_at: <%= Time.zone.now %>
+
+football2:
+  id: 4
+  name: Football Two
+  type: Facility::Football
+  updated_at: <%= Time.zone.now %>
+  created_at: <%= Time.zone.now %>
+
+volleyball1:
+  id: 5
+  name: Volleyball One
+  type: Facility::Volleyball
+  updated_at: <%= Time.zone.now %>
+  created_at: <%= Time.zone.now %>
+
+basketball1:
+  id: 6
+  name: Basketball One
+  type: Facility::Basketball
+  updated_at: <%= Time.zone.now %>
+  created_at: <%= Time.zone.now %>

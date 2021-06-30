@@ -17,6 +17,7 @@ end
 def authprocess(meth, path, **args)
   user_sym = args.delete(:user) || :dave
   user = users(user_sym)
+  args[:params] ||= {}
   args[:params].merge!({ api_token: user.api_token })
 
   process(meth, path, **args)

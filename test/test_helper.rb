@@ -13,3 +13,31 @@ module ActiveSupport
     # Add more helper methods to be used by all tests here...
   end
 end
+
+def authprocess(meth, path, **args)
+  user_sym = args.delete(:user) || :dave
+  user = users(user_sym)
+  args[:params].merge!({ api_token: user.api_token })
+
+  process(meth, path, **args)
+end
+
+def authpost(path, **args)
+  authprocess(:post, path, **args)
+end
+
+def authget(path, **args)
+  authprocess(:get, path, **args)
+end
+
+def authpatch(path, **args)
+  authprocess(:patch, path, **args)
+end
+
+def authdelete(path, **args)
+  authprocess(:delete, path, **args)
+end
+
+def json_body
+  JSON.parse(response.body)
+end

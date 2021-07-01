@@ -23,3 +23,7 @@ Style/FrozenStringLiteralComment:
 
 Style/Documentation:
   Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - test/**/*

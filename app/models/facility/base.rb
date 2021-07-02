@@ -18,7 +18,8 @@ module Facility
     validates :type, presence: true, inclusion: { in: VALID_TYPES }
     validates :name, presence: true, length: { minimum: 1, maximum: 255 }
 
-    has_many :timeslots, inverse_of: :facility, foreign_key: :facility_id, class_name: 'Timeslot'
+    has_many :timeslots, inverse_of: :facility, foreign_key: :facility_id, class_name: 'Timeslot', dependent: :destroy
+    has_many :bookings, through: :timeslots
 
     def serializable_hash(opts = {})
       opts = {

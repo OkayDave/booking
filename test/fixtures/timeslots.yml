@@ -24,3 +24,11 @@
     facility_id: 5 
     slot_time: <%= DateTime.parse("#{x}:00") + 9.hours + 1.day %>
 <% end %>
+
+<% (1..10).each do |x| %>
+  <%= "basketball1_#{x}" %>:
+    id: <%= x + 30 %>
+    facility_id: 7 
+    slot_time: <%= DateTime.parse("#{x}:00") + 9.hours + 1.day %>
+    state: 1
+<% end %>

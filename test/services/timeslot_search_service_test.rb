@@ -33,13 +33,14 @@ class TimeslotSearchServiceTest < ActiveSupport::TestCase
     end
 
     it 'should return correct results with single date specified' do
-      results = @search.search date_from: DateTime.now, date_to: DateTime.now
+      results = @search.search date_from: DateTime.now.strftime('%Y-%m-%d'),
+                               date_to: DateTime.now.strftime('%Y-%m-%d')
 
       assert(results.all? { |result| result.slot_time.today? })
     end
 
     it 'should return correct results with future date range' do
-      results = @search.search date_from: DateTime.tomorrow
+      results = @search.search date_from: DateTime.tomorrow.strftime('%Y-%m-%d')
 
       assert(results.all? { |result| result.slot_time.tomorrow? })
     end
@@ -61,8 +62,8 @@ class TimeslotSearchServiceTest < ActiveSupport::TestCase
     it 'should return available tennis courts that are available today between 12 and 2' do
       tennis = facilities(:tennis1)
       results = @search.search facility_type: :tennis,
-                               date_from: DateTime.now,
-                               date_to: DateTime.now,
+                               date_from: DateTime.now.strftime('%Y-%m-%d'),
+                               date_to: DateTime.now.strftime('%Y-%m-%d'),
                                time_from: 12,
                                time_to: 14
 

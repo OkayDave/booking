@@ -28,3 +28,14 @@
 **Test coverage** - There's lots of room for improvement in the test coverage. Basic functionality and happy-paths are covered in controller and model test, but there's limited coverage of bad routes and edge cases. There are no end-end integration tests.
 
 
+## Extra Gems
+
+**Rubocop** - Used for linting
+
+**activerecord-import** - Used for bulk-upsert of generated Timeslot records. `upsert_all` is provided by Rails 6, but it does not support validations in the current version.
+
+**Pagy** - Introduced for paginating results. Currently partially only implemented but completely untested.
+
+**minitest-spec-rails** - allows use of `describe` and `it` blocks in tests
+
+**mocha** - nicer stubbing syntax for tests

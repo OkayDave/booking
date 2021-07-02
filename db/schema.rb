@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_01_032150) do
+ActiveRecord::Schema.define(version: 2021_07_02_045635) do
+
+  create_table "bookings", force: :cascade do |t|
+    t.integer "timeslot_id", null: false
+    t.integer "user_id", null: false
+    t.integer "state", default: 0, null: false
+    t.json "metadata", default: {}
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["state"], name: "index_bookings_on_state"
+    t.index ["timeslot_id"], name: "index_bookings_on_timeslot_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
 
   create_table "facility_bases", force: :cascade do |t|
     t.string "name", null: false
@@ -26,7 +38,9 @@ ActiveRecord::Schema.define(version: 2021_07_01_032150) do
     t.integer "facility_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "state", default: 0
     t.index ["facility_id", "slot_time"], name: "index_timeslot_facility_slot_time", unique: true
+    t.index ["state"], name: "index_timeslots_on_state"
   end
 
   create_table "users", force: :cascade do |t|

@@ -4,16 +4,21 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-dave:
-  id: 1
-  name: 'Dave'
-  email: 'dave@localhost'
-  password_digest: <%= BCrypt::Password.create('Pass123', cost: 4) %>
-  api_token: token123
 
-ben:
+dave_tennis:
+  id: 1
+  user_id: 1
+  timeslot_id: 1
+  state: 0
+
+dave_football:
   id: 2
-  name: 'Ben'
-  email: 'ben@localhost'
-  password_digest: <%= BCrypt::Password.create('Pass123', cost: 4) %>
-  api_token: bentoken12
+  user_id: 1
+  timeslot_id: 11 
+  state: 0
+
+ben_football:
+  id: 3
+  user_id: 2
+  timeslot_id: 12
+  state: 0

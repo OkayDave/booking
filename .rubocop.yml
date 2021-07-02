@@ -27,3 +27,10 @@ Style/Documentation:
 Metrics/BlockLength:
   Exclude:
     - test/**/*
+
+Naming/VariableNumber:
+  Enabled: false
+
+Metrics/ClassLength:
+  Exclude:
+    - test/**/*

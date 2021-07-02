@@ -6,11 +6,11 @@ class TimeslotSearchServiceTest < ActiveSupport::TestCase
       @search = TimeslotSearchService.new
     end
 
-    it 'should return all timeslots when no params specified' do
+    it 'should return all available timeslots when no params specified' do
       results = @search.search
 
       assert(results.all? { |result| result.is_a?(Timeslot) })
-      assert_equal Timeslot.count, results.size
+      assert_equal Timeslot.available.count, results.size
     end
 
     it 'should filter by valid facility type' do

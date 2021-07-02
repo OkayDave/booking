@@ -20,7 +20,7 @@ class TimeslotSearchService
   private
 
   def filter_timeslots(facility_type, date_from, date_to, time_from, time_to)
-    scope = Timeslot.all
+    scope = Timeslot.available
     scope = filter_by_facility_type(scope, FACILITY_MAP[facility_type.to_sym]) unless facility_type.blank?
     scope = filter_by_date(scope) unless date_from.blank? && date_to.blank?
     scope = filter_by_time(scope) unless time_from.blank? && time_to.blank?

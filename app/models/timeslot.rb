@@ -1,10 +1,16 @@
 class Timeslot < ApplicationRecord
   belongs_to :facility, inverse_of: :timeslots, class_name: 'Facility::Base'
+  has_many :bookings, inverse_of: :timeslot, dependent: :destroy
 
   before_validation :round_slot_time_to_last_hour
   validates :slot_time, presence: true
   validates :facility, presence: true
   validate :excluded_day
+
+  enum state: {
+    available: 0,
+    unavailable: 1
+  }
 
   private
 

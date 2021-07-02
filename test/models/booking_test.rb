@@ -3,7 +3,7 @@ require 'test_helper'
 class BookingTest < ActiveSupport::TestCase
   describe 'state management' do
     setup do
-      @ts = timeslots(:tennis1_1)
+      @ts = timeslots(:tennis1_2)
       user = users(:dave)
 
       @booking = Booking.create(timeslot: @ts, user: user)

@@ -30,3 +30,7 @@ Metrics/BlockLength:
 
 Naming/VariableNumber:
   Enabled: false
+
+Metrics/ClassLength:
+  Exclude:
+    - test/**/*

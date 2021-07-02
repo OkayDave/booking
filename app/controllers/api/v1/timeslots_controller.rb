@@ -11,6 +11,8 @@ module Api
         render json: pagy(@timeslots)
       end
 
+      private
+
       def search_params
         params.fetch(:search, {}).permit(:facility_type, :date_from, :date_to, :time_from, :time_to)
       end

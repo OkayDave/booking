@@ -9,6 +9,7 @@
     id: <%= x %>
     facility_id: 1 
     slot_time: <%= DateTime.parse("#{x}:00") + 9.hours %>
+    state: <%= x == 1 ? 1 : 0 %>
 <% end %>
 
 <% (1..10).each do |x| %>
@@ -16,6 +17,7 @@
     id: <%= x + 10 %>
     facility_id: 3 
     slot_time: <%= DateTime.parse("#{x}:00") + 9.hours %>
+    state: <%= ((x + 10 == 11) || (x + 10 == 12)) ? 1 : 0 %>
 <% end %>
 
 <% (1..10).each do |x| %>

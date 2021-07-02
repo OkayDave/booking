@@ -26,7 +26,7 @@ module Api
           assert timeslots.is_a?(Array)
           assert Timeslot.count, timeslots.size
           assert_equal %w[id slot_time facility_id created_at updated_at state], timeslots.first.keys
-          assert_equal 1, timeslots.first['id']
+          assert_equal timeslots(:tennis1_2).id, timeslots.first['id']
           assert_equal 1, timeslots.first['facility_id']
         end
 

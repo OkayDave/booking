@@ -4,3 +4,21 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
+
+dave_tennis:
+  id: 1
+  user_id: 1
+  timeslot_id: 1
+  state: 0
+
+dave_football:
+  id: 2
+  user_id: 1
+  timeslot_id: 11 
+  state: 0
+
+ben_football:
+  id: 3
+  user_id: 2
+  timeslot_id: 12
+  state: 0

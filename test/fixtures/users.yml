@@ -5,7 +5,15 @@
 # below each fixture, per the syntax in the comments below
 #
 dave:
+  id: 1
   name: 'Dave'
   email: 'dave@localhost'
   password_digest: <%= BCrypt::Password.create('Pass123', cost: 4) %>
   api_token: token123
+
+ben:
+  id: 2
+  name: 'Ben'
+  email: 'ben@localhost'
+  password_digest: <%= BCrypt::Password.create('Pass123', cost: 4) %>
+  api_token: bentoken12

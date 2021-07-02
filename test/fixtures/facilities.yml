@@ -8,7 +8,7 @@
 tennis1:
   id: 1
   name: Tennis Court One
-  type: Facility::Tennis
+  type: 'Facility::Tennis'
   updated_at: <%= Time.zone.now %>
   created_at: <%= Time.zone.now %>
 
